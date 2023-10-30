@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+
+set GITHUB_USERNAME "thquddnr123"
+set GITHUB_TOKEN "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"
+
+spawn ./importMain.sh
+#spawn ./git_push.sh
+
+expect "Password for " {
+  send -raw "$GITHUB_TOKEN\r"
+}
+expect eof
